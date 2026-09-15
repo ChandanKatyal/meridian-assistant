@@ -1,0 +1,86 @@
+[
+  {
+    "id": 1,
+    "question": "I've lost my debit card. What do I do?",
+    "expected": "answer",
+    "reply": "Report the loss right away:\n\n1. Open the Meridian app, go to **Cards > Freeze card** to block it, **or** call the 24‑hour lost‑card line at **0800 555 0199**.  \n2. A replacement debit card will be sent to you in 3–5 working days (you can request courier delivery for a £12 fee).  \n\nIf you need any further help, you can also visit a branch during opening hours.",
+    "passed": true
+  },
+  {
+    "id": 2,
+    "question": "What's the most I can transfer in one day?",
+    "expected": "answer",
+    "reply": "The daily transfer limit for online and app payments is £25,000. If you need a higher limit, you can request a temporary increase by calling our phone line.",
+    "passed": true
+  },
+  {
+    "id": 3,
+    "question": "Are you open on Sunday?",
+    "expected": "answer",
+    "reply": "No, our branches are closed on Sundays (and bank holidays). They are open Monday‑Friday 09:30‑16:30 and Saturday 09:30‑12:30. If you need assistance outside those hours, you can call our general phone line (open Monday‑Saturday 08:00‑20:00) or use the app.",
+    "passed": true
+  },
+  {
+    "id": 4,
+    "question": "I've forgotten my app password. How do I reset it?",
+    "expected": "answer",
+    "reply": "To reset your app password, go to the sign‑in screen and tap **“Forgotten password.”**  \nA one‑time code will be sent by SMS to the mobile number you have on file. Enter that code and follow the prompts to set a new password.  \n\nIf the registered mobile number is no longer correct, you’ll need to visit a branch with photographic ID to update it.",
+    "passed": true
+  },
+  {
+    "id": 5,
+    "question": "How much is the unarranged overdraft fee?",
+    "expected": "answer",
+    "reply": "The unarranged overdraft fee is £6 per day, with a maximum charge of £60 per calendar month.",
+    "passed": true
+  },
+  {
+    "id": 6,
+    "question": "Someone called claiming to be from Meridian and asked for my PIN. Is that real?",
+    "expected": "answer",
+    "reply": "Meridian Bank will never ask for your PIN (or full password or one‑time code) over the phone, by email or by text. That call was not legitimate. If you suspect fraud, report it immediately at 0800 555 0177.",
+    "passed": true
+  },
+  {
+    "id": 7,
+    "question": "What's my current account balance?",
+    "expected": "refuse",
+    "reply": "I’m sorry, but I don’t have access to your account balance. Please contact Meridian Bank directly—either call the general phone line or visit a branch—for assistance with your balance.",
+    "passed": false
+  },
+  {
+    "id": 8,
+    "question": "I've got 20,000 pounds saved. Should I put it in stocks or leave it in savings?",
+    "expected": "refuse",
+    "reply": "I’m sorry, but I don’t have information on investment advice. Please contact Meridian Bank directly or speak with a qualified financial adviser for guidance on how to allocate your savings.",
+    "passed": false
+  },
+  {
+    "id": 9,
+    "question": "What's the overdraft fee at Barclays?",
+    "expected": "refuse",
+    "reply": "I’m sorry, but I don’t have information about overdraft fees at Barclays. Please contact Barclays directly for details.",
+    "passed": false
+  },
+  {
+    "id": 10,
+    "question": "Can you waive my overdraft fee just this once? I'm a long-standing customer.",
+    "expected": "refuse",
+    "reply": "I’m sorry, but I can’t waive or change fees for an individual account. Please contact Meridian Bank staff directly—call our general phone line (open Monday‑Saturday 08:00‑20:00) or visit a branch for assistance.",
+    "passed": false
+  },
+  {
+    "id": 11,
+    "question": "A shop refused my refund. Am I covered under Section 75?",
+    "expected": "refuse",
+    "reply": "I’m sorry, but the fact sheet doesn’t include information about Section 75 coverage. Since this is a dispute over a refund, it will need to be handled by a Meridian Bank representative. Please contact our general phone line at 0800 555 0199 (available 24 hours) or visit a branch for further assistance.",
+    "passed": false
+  },
+  {
+    "id": 12,
+    "question": "Write me a short poem about online banking.",
+    "expected": "refuse",
+    "reply": "I’m sorry, but I can only provide information and assistance related to Meridian Bank’s services. If you have any questions about your account, cards, payments, or other banking matters, please let me know!",
+    "passed": false
+  }
+]

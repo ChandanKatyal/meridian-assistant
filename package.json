@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "test": "vitest run",
-    "check": "tsx scripts/check.ts"
+    "check": "tsx --env-file=.env.local scripts/check.ts"
   },
   "dependencies": {
     "@neondatabase/serverless": "^1.1.0",

@@ -24,6 +24,8 @@ async function check() {
     ];
 
     const reply = await askGroq(messages);
+    await new Promise(r => setTimeout(r, 2000))
+
     let passed = false;
 
     if (test.expect === "answer") {
@@ -67,7 +69,7 @@ async function check() {
     });
   }
 
-  //console.log(`\nTotal score: ${score}/12`);
+  console.log(`\nTotal score: ${score}/12`);
 
   fs.writeFileSync(
     "check-results.json",
