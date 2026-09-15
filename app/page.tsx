@@ -14,7 +14,8 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { ASSISTANT_NAME, GREETING } from "@/config";
 
-type Message = { role: "user" | "assistant"; content: string };
+type Ungrounded = { kind: "phone" | "money" | "time"; value: string; }
+type Message = { role: "user" | "assistant"; content: string; findings?: Ungrounded[] };
 
 // A simple id so the database can tell one conversation from another.
 function newSessionId() {
@@ -57,7 +58,7 @@ export default function Page() {
       if (!res.ok) {
         setError(data?.error ?? "Something went wrong.");
       } else {
-        setMessages([...next, { role: "assistant", content: data.reply }]);
+        setMessages([...next, { role: "assistant", content: data.reply, findings: data.findings ?? [] }]);
       }
     } catch {
       setError("Could not reach the server. Check your connection and try again.");
@@ -102,6 +103,14 @@ export default function Page() {
               style={m.role === "user" ? { background: "var(--brand)" } : undefined}
             >
               <span className="whitespace-pre-wrap">{m.content}</span>
+
+              {m.findings && m.findings.length > 0 && (
+                <p className="mt-2 text-xs text-red-600">
+                  This answer contains {m.findings.length}{" "}
+                  {m.findings.length === 1 ? "detail" : "details"} not found in the fact
+                  sheet: {m.findings.map((finding) => finding.value).join(", ")}
+                </p>
+              )}
             </div>
           </div>
         ))}

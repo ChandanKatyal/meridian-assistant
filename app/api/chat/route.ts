@@ -13,7 +13,7 @@
  */
 
 import { NextRequest, NextResponse } from "next/server";
-import { SYSTEM_PROMPT } from "@/config";
+import { BANK_FACTS, SYSTEM_PROMPT } from "@/config";
 import { askGroq, GroqError, type ChatMessage } from "@/lib/groq";
 import {
   ensureTable,
@@ -21,6 +21,7 @@ import {
   databaseIsConfigured,
   studentName,
 } from "@/lib/db";
+import { findUngrounded } from "@/lib/grounding";
 
 export const runtime = "nodejs";
 export const maxDuration = 30;
@@ -66,6 +67,8 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: message }, { status });
   }
 
+  const findings = findUngrounded(reply, BANK_FACTS)
+
   // Step 4: saving must never break the chat, so failures here are logged only.
   if (databaseIsConfigured()) {
     try {
@@ -80,5 +83,5 @@ export async function POST(request: NextRequest) {
     }
   }
 
-  return NextResponse.json({ reply });
+  return NextResponse.json({ reply, findings });
 }
