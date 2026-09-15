@@ -105,13 +105,13 @@ Open http://localhost:3000
 save anything.
 
 ### How this works
- -**config.js**: This file shows the Bank fact sheet and SYSTEM PROMPT. The changes to be done are allowed in the system prompt only.
- -**app/page.tsx**: The response from the API is stored in *res* and the json one is stored in *data*. The API key is not mentioned anywhere because its sensitive information and cant be shared publically.
- -**app/api/chat/route.ts**: At line 51, there is a payload function where your system prompt is put in front of the conversation.
- -**lib/groq.ts**: This file has HTTP call to the model. If the repsonse is not okay, the function throws an error with the status code of that particular error.
- -**lib/db.ts**: Inside the ensureTable function, a table is created named 'messages' if it does not exists already. If the table exists already, the messages are saved to the table.
- -**tests/questions.ts**: A total of 12 questions are listed, where first six are expected to give the answer and the other six to be refused(Fail the test case)
- -**tests/prompt.test.ts**: Test cases are checked before you can call your prompt to be finished. All of them should pass to complete the job.
+ -config.js: This file shows the Bank fact sheet and SYSTEM PROMPT. The changes to be done are allowed in the system prompt only.
+ -app/page.tsx: The response from the API is stored in *res* and the json one is stored in *data*. The API key is not mentioned anywhere because its sensitive information and cant be shared publically.
+ -app/api/chat/route.ts: At line 51, there is a payload function where your system prompt is put in front of the conversation.
+ -lib/groq.ts: This file has HTTP call to the model. If the repsonse is not okay, the function throws an error with the status code of that particular error.
+ -lib/db.ts: Inside the ensureTable function, a table is created named 'messages' if it does not exists already. If the table exists already, the messages are saved to the table.
+ -tests/questions.ts: A total of 12 questions are listed, where first six are expected to give the answer and the other six to be refused(Fail the test case)
+ -tests/prompt.test.ts: Test cases are checked before you can call your prompt to be finished. All of them should pass to complete the job.
 ---
 
 ## The twelve acceptance questions
